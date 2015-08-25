@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-     @jobs = Job.all
+    @jobs = Job.page(params[:page]).per(25)    #This allows creating of another page when you get to 25 items
   end
 
   def new
